@@ -23,17 +23,18 @@ function PairOfBarriers(height, opening, x){
 
     this.higher = new Barrier(true)
     this.less = new Barrier(false)
-    
+
     this.element.appendChild(this.higher.element)
     this.element.appendChild(this.less.element)
 
     this.drawOpening = () => {
         const topHeight = Math.random() * (height - opening)
-        const lowerHeight  = height - opening - topHeight
+        const lowerHeight = height - opening - topHeight
         this.higher.setHeight(topHeight)
         this.less.setHeight(lowerHeight)
     }
-    this.getX = () => parseInt(this.element.style.left.split('px') [0])
+
+    this.getX = () => parseInt(this.element.style.left.split('px')[0])
     this.setX = x => this.element.style.left = `${x}px`
     this.getWidth = () => this.element.clientWidth
 
@@ -132,7 +133,7 @@ function collided(bird, barriers){
         if (!collided) {
             const upper = pairOfBarriers.higher.element
             const lower = pairOfBarriers.less.element
-            collided = areOverlapping(bird.element, upper || areOverlapping(bird.element, lower)) 
+            collided = areOverlapping(bird.element, upper) || areOverlapping(bird.element, lower) 
         }
     })
     return collided
