@@ -5,7 +5,7 @@
         "fields": {
           "title": "armchair",
           "price": 51.99,
-          "image": { "fields": { "file": { "url": "./images/product-1.jpeg" } } }
+          "image": { "fields": { "file": { "url": "./images/product-1.jpg" } } }
         }
       },
       {
@@ -13,7 +13,7 @@
         "fields": {
           "title": "set of chairs",
           "price": 21.99,
-          "image": { "fields": { "file": { "url": "./images/product-2.jpeg" } } }
+          "image": { "fields": { "file": { "url": "./images/product-2.jpg" } } }
         }
       },
       {
@@ -21,7 +21,7 @@
         "fields": {
           "title": "white table and chairs",
           "price": 124.99,
-          "image": { "fields": { "file": { "url": "./images/product-3.jpeg" } } }
+          "image": { "fields": { "file": { "url": "./images/product-3.jpg" } } }
         }
       },
       {
@@ -29,7 +29,7 @@
         "fields": {
           "title": "brown couch",
           "price": 199.99,
-          "image": { "fields": { "file": { "url": "./images/product-4.jpeg" } } }
+          "image": { "fields": { "file": { "url": "./images/product-4.jpg" } } }
         }
       },
       {
@@ -37,7 +37,7 @@
         "fields": {
           "title": "dark couch",
           "price": 211.99,
-          "image": { "fields": { "file": { "url": "./images/product-5.jpeg" } } }
+          "image": { "fields": { "file": { "url": "./images/product-5.jpg" } } }
         }
       },
       {
@@ -45,7 +45,7 @@
         "fields": {
           "title": "double bed",
           "price": 131.99,
-          "image": { "fields": { "file": { "url": "./images/product-6.jpeg" } } }
+          "image": { "fields": { "file": { "url": "./images/product-6.jpg" } } }
         }
       },
       {
@@ -53,7 +53,7 @@
         "fields": {
           "title": "double bed",
           "price": 99.99,
-          "image": { "fields": { "file": { "url": "./images/product-7.jpeg" } } }
+          "image": { "fields": { "file": { "url": "./images/product-7.jpg" } } }
         }
       },
       {
@@ -61,7 +61,7 @@
         "fields": {
           "title": "brown pillows",
           "price": 10.99,
-          "image": { "fields": { "file": { "url": "./images/product-8.jpeg" } } }
+          "image": { "fields": { "file": { "url": "./images/product-8.jpg" } } }
         }
       }
     ]
