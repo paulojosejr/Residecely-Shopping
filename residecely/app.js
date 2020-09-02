@@ -141,6 +141,23 @@ class UI {
             this.clearCart()
         })
         // cart functionality
+        cartContent.addEventListener('click', event => {
+            if (event.target.classList.contains('remove-item')){
+                let removeItem = event.target
+                let id = removeItem.dataset.id
+                cartContent.removeChild
+                (removeItem.parentElement.parentElement)
+                this.removeItem(id)
+            }else if (event.target.classList.contains('fa-chevron-up')) {
+                let addAmount = event.target
+                let id = addAmount.dataset.id
+                let tempItem = cart.find(item => item.id === id)
+                tempItem.amount = tempItem.amount + 1
+                Storage.saveCart(cart)
+                this.setCartValues(cart)
+                addAmount.nextElementSibling.innerText = tempItem.amount
+            }
+        })
     }
     clearCart(){
         let cartItems = cart.map(item => item.id)
