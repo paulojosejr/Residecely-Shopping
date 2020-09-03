@@ -1,3 +1,10 @@
+const client = contentful.createClient({
+    // This is the space ID. A space is like a project folder in Contentful terms
+    space: "ngf794ip7r2k",
+    // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+    accessToken: "liuOjcUw_I424V21HXi9NmwAwaid5NpeWWJRf2REmo0"
+});
+
 // variables
 
 const cartBtn = document.querySelector(".cart-btn")
@@ -20,9 +27,15 @@ let buttonsDOM = []
 class Products {
     async getProducts() {
         try {
+
+            let contentful = await client.getEntries({
+                content_type: 'residecelyProducts'
+            })
+
             let result = await fetch('products.json')
             let data = await result.json()
-            let products = data.items
+
+            let products = contentful.items
             products = products.map(item => {
                 const { title, price } = item.fields
                 const { id } = item.sys
@@ -117,21 +130,21 @@ class UI {
         </div>`
         cartContent.appendChild(div)
     }
-    showCart(){
+    showCart() {
         cartOverlay.classList.add('transparentBcg')
         cartDOM.classList.add('showCart')
     }
-    setupAPP (){
+    setupAPP() {
         cart = Storage.getCart()
         this.setCartValues(cart)
         this.populateCart(cart)
         cartBtn.addEventListener('click', this.showCart)
         closeCartBtn.addEventListener('click', this.hideCart)
     }
-    populateCart(cart){
+    populateCart(cart) {
         cart.forEach(item => this.addCartItem(item))
     }
-    hideCart(){
+    hideCart() {
         cartOverlay.classList.remove('transparentBcg')
         cartDOM.classList.remove('showCart')
     }
@@ -142,13 +155,13 @@ class UI {
         })
         // cart functionality
         cartContent.addEventListener('click', event => {
-            if (event.target.classList.contains('remove-item')){
+            if (event.target.classList.contains('remove-item')) {
                 let removeItem = event.target
                 let id = removeItem.dataset.id
                 cartContent.removeChild
-                (removeItem.parentElement.parentElement)
+                    (removeItem.parentElement.parentElement)
                 this.removeItem(id)
-            }else if (event.target.classList.contains('fa-chevron-up')) {
+            } else if (event.target.classList.contains('fa-chevron-up')) {
                 let addAmount = event.target
                 let id = addAmount.dataset.id
                 let tempItem = cart.find(item => item.id === id)
@@ -156,14 +169,28 @@ class UI {
                 Storage.saveCart(cart)
                 this.setCartValues(cart)
                 addAmount.nextElementSibling.innerText = tempItem.amount
+            } else if (event.target.classList.contains('fa-chevron-down')) {
+                let lowerAmount = event.target
+                let id = lowerAmount.dataset.id
+                let tempItem = cart.find(item => item.id === id)
+                console.log(tempItem)
+                tempItem.amount = tempItem.amount - 1
+                if (tempItem.amount > 0) {
+                    Storage.saveCart(cart)
+                    this.setCartValues(cart)
+                    lowerAmount.previousElementSibling.innerText = tempItem.amount
+                } else {
+                    cartContent.removeChild(lowerAmount.parentElement.parentElement)
+                    this.removeItem(id)
+                }
             }
         })
     }
-    clearCart(){
+    clearCart() {
         let cartItems = cart.map(item => item.id)
         cartItems.forEach(id => this.removeItem(id))
         console.log(cartContent.children)
-        while(cartContent.children.length > 0){
+        while (cartContent.children.length > 0) {
             cartContent.removeChild(cartContent.children[0])
         }
         this.hideCart()
@@ -193,7 +220,7 @@ class Storage {
     static saveCart(cart) {
         localStorage.setItem('cart', JSON.stringify(cart))
     }
-    static getCart(){
+    static getCart() {
         return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
     }
 }
