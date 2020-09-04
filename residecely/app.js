@@ -244,5 +244,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 bannerBtn.addEventListener('click', () =>{
     const scrolldown = document.querySelector('.products')
-    scrolldown.scrollIntoView()
+    scrolldown.scrollIntoView({behavior: 'smooth'})
 })
