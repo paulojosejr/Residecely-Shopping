@@ -1,5 +1,16 @@
 # Demonstration
-[Demo in netlify.](https://residecely.netlify.app)
+
+<p align="center">
+  <a href="https://residecely.netlify.app/">
+  <img align="center" src="/github/demoNetlify.png">
+  </a>
+</p>
+
+![DEMO](/github/demoResidecely.gif)
+
+![DEMO](/github/shopping.png)
+
+![DEMO](/github/items.png)
 
 # Technologies
 :heavy_check_mark: Vanilla JavaScript\
