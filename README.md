@@ -1,7 +1,7 @@
 # Demonstration
 [Demo in netlify.](https://residecely.netlify.app)
 
-#Technologies
+# Technologies
 :heavy_check_mark: Vanilla JavaScript\
 :heavy_check_mark: CSS\
 :heavy_check_mark: HTML
