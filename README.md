@@ -8,7 +8,7 @@
 
 # Project
 A project built with vanilla javaScript, CSS and HTML, using localstorage to save the items in the cart, giving a great experience for the user.
-* **CONTENTFUL**/
+* **CONTENTFUL**\
 I implemented the Content Delivery API (CDA) for a simple and easy experience to add and remove items from the website.
-* **Netlify**/
+* **Netlify**\
 I hosted my project on netlify which offers free hosting services for static websites.
