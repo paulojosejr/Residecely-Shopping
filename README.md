@@ -18,7 +18,7 @@
 :heavy_check_mark: HTML
 
 # Project
-A project built with vanilla javaScript, CSS and HTML, using localstorage to save the items in the cart, giving a great experience for the user.
+A project built with vanilla javaScript, CSS and HTML. Using localstorage to save the items in the cart and giving a great experience for the user.
 * **CONTENTFUL**\
 I implemented the Content Delivery API (CDA) for a simple and easy experience to add and remove items from the website.
 * **Netlify**\
