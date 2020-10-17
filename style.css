@@ -88,13 +88,9 @@
     transition: var(--mainTransition);
     cursor: pointer;
   }
-  .banner-btn:hover {
-    background: transparent;
-    color: var(--primaryColor);
-  }
 
   @media (hover: hover) {
-    .banner-btn:hover{
+    .banner-btn:hover {
       background: transparent;
       color: var(--primaryColor);
     }
